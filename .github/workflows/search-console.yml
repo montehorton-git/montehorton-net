@@ -1,0 +1,44 @@
+name: Google Search Console (verify + sitemap)
+
+on:
+  deployment_status:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  gsc:
+    if: github.event_name == 'workflow_dispatch' || (github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'github-pages')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Skip until the Google key is added
+        id: check
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+        run: |
+          if [ -z "$GSC_SA_KEY" ]; then
+            echo "GSC_SA_KEY secret not set yet — skipping."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.check.outputs.ready == 'true'
+        run: pip install --quiet google-auth requests
+      - if: steps.check.outputs.ready == 'true'
+        name: Verify site, add owner, submit sitemap
+        env:
+          GSC_SA_KEY: ${{ secrets.GSC_SA_KEY }}
+          GSC_OWNER_EMAIL: ${{ secrets.GSC_OWNER_EMAIL }}
+        run: python3 scripts/search_console.py
+      - if: steps.check.outputs.ready == 'true'
+        name: Commit verification file if one was created
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add google*.html
+            git commit -m "Add Google site verification file"
+            git push
+          fi

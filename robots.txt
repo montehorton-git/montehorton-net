@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /keyboard-capo/thanks-
 
 Sitemap: https://montehorton.net/sitemap.xml

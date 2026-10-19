@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Tools I Use | Monte Horton</title>
+<meta name="description" content="The traffic, lead and list-building tools Monte Horton uses every day: My Lead Gen Secret, Daily-Ads, Twice Confirmed Traffic, LeadsLeap and GotBackup.">
+<link rel="canonical" href="https://montehorton.net/tools/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://montehorton.net/tools/">
+<meta property="og:title" content="The Tools I Use | Monte Horton">
+<meta property="og:description" content="The traffic, lead and list-building tools I use every day, and why.">
+<meta name="twitter:card" content="summary">
+<meta name="author" content="Monte Horton">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --paper:#FBF9F5; --ink:#1A2238; --muted:#5C6478;
+    --brass:#8A6A2F; --gold:#E2B44C; --rule:#DED8CC; --rule-soft:#E9E4DA;
+    --card:#FFFFFF; --band:#141A2B; --band-ink:#F3EFE6; --band-muted:#A9B0C2;
+    --display:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#131826; --ink:#EDEAE3; --muted:#98A0B4;
+      --brass:#C79B4A; --rule:#2C3446; --rule-soft:#232B3C; --card:#1A2033; --band:#0C1019;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#131826; --ink:#EDEAE3; --muted:#98A0B4;
+    --brass:#C79B4A; --rule:#2C3446; --rule-soft:#232B3C; --card:#1A2033; --band:#0C1019;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
+  .wrap{width:100%;max-width:62rem;margin:0 auto;padding:0 1.25rem}
+
+  .band{background:var(--band);color:var(--band-ink);padding:1.1rem 0 5.5rem;border-bottom:3px solid var(--gold)}
+  .crumb{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--band-muted);text-decoration:none}
+  .crumb:hover{color:var(--gold)}
+  .band h1{font-family:var(--display);font-optical-sizing:auto;font-weight:700;font-size:clamp(2.8rem,9vw,4.8rem);line-height:1;letter-spacing:-.025em;margin:3.2rem 0 0;color:var(--gold)}
+  .band .lede{font-family:var(--display);font-style:italic;font-size:clamp(1.25rem,3.4vw,1.7rem);line-height:1.4;margin:1.5rem 0 0;max-width:44rem;text-wrap:balance}
+  .band .note{margin:1.2rem 0 0;color:var(--band-muted);font-size:1.02rem;max-width:44rem}
+
+  .jump{display:flex;flex-wrap:wrap;gap:.5rem;margin:2rem 0 0;padding:0;list-style:none}
+  .jump a{display:inline-block;font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;text-decoration:none;color:var(--band-ink);border:1px solid #3A4360;border-radius:999px;padding:.35rem .8rem}
+  .jump a:hover{border-color:var(--gold);color:var(--gold)}
+
+  .tools{margin:-3.2rem auto 0;display:grid;gap:2.2rem}
+  .tool{background:var(--card);border:1px solid var(--rule);border-top:6px solid var(--gold);border-radius:14px;padding:2.4rem clamp(1.3rem,4vw,3rem) 2.6rem;box-shadow:0 1px 2px rgba(20,26,43,.05),0 8px 24px -12px rgba(20,26,43,.18)}
+  .kind{font-family:var(--mono);font-size:.78rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--brass);margin:0}
+  .tool h2{font-family:var(--display);font-weight:700;font-size:clamp(2.1rem,6vw,3.1rem);line-height:1.04;margin:.45rem 0 0;letter-spacing:-.02em}
+  .promise{font-size:clamp(1.15rem,2.6vw,1.4rem);line-height:1.45;margin:.9rem 0 0;font-weight:600}
+  .why{margin:1.5rem 0 0;padding:1.1rem 1.3rem;border-left:4px solid var(--gold);background:color-mix(in srgb,var(--gold) 9%,transparent);border-radius:0 8px 8px 0;font-size:1.04rem}
+  .why b{font-family:var(--mono);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:.2rem;font-weight:500}
+  .tool ul{margin:1.4rem 0 0;padding:0 0 0 1.25rem;font-size:1.06rem}
+  .tool li{margin:.45rem 0;font-weight:500;color:var(--ink)}
+  .tool li::marker{color:var(--brass)}
+
+  .preview{margin:1.3rem 0 0;border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:#fff}
+  .preview iframe{display:block;width:100%;height:clamp(380px,60vw,560px);border:0}
+  .preview figcaption{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;color:var(--muted);padding:.45rem .8rem;border-top:1px solid var(--rule-soft);background:var(--card)}
+
+  .cta{display:block;text-align:center;margin:1.8rem auto 0;max-width:30rem;padding:1.15rem 1.4rem;background:var(--gold);color:#1A1406;font-weight:700;font-size:clamp(1.15rem,2.8vw,1.35rem);text-decoration:none;border-radius:999px;box-shadow:0 4px 0 #B8892A,0 10px 24px -10px rgba(184,137,42,.7);transition:transform .12s,box-shadow .12s}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 6px 0 #B8892A,0 14px 28px -10px rgba(184,137,42,.75)}
+  .cta:active{transform:translateY(2px);box-shadow:0 2px 0 #B8892A}
+  .fine{font-size:.92rem;color:var(--muted);margin:.7rem 0 0;text-align:center}
+
+  .closing{margin:3rem 0 0;padding:1.8rem 0 0;border-top:1px solid var(--rule)}
+  .closing p{margin:0 0 1rem;color:var(--muted);font-size:1.05rem}
+  .closing a{color:var(--brass)}
+  .disclose{font-size:.84rem}
+  footer{margin:3.5rem auto 0;padding:1.4rem 1.25rem 3rem;max-width:62rem;color:var(--muted);font-family:var(--mono);font-size:.7rem;letter-spacing:.06em}
+  footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
+</style>
+</head>
+<body>
+
+<div class="band">
+  <div class="wrap">
+    <a class="crumb" href="/">&larr; montehorton.net</a>
+    <h1>The tools I use</h1>
+    <p class="lede">These are the traffic, lead and list-building tools I use every day. Each one has earned its place.</p>
+    <p class="note">Each one comes with a plain note on how I actually use it. Start with whichever one fixes the problem you have right now.</p>
+    <ul class="jump">
+      <li><a href="#mlgs">My Lead Gen Secret</a></li>
+      <li><a href="#daily-ads">Daily-Ads</a></li>
+      <li><a href="#tct">Twice Confirmed Traffic</a></li>
+      <li><a href="#leadsleap">LeadsLeap</a></li>
+      <li><a href="#gotbackup">GotBackup</a></li>
+    </ul>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="tools">
+
+    <article class="tool" id="mlgs">
+      <p class="kind">Leads, delivered daily</p>
+      <h2>My Lead Gen Secret</h2>
+      <p class="promise">Fresh leads added to your list every day, with a built-in mailer to reach them. You don't need a website or an ad budget.</p>
+      <p class="why"><b>Why I use it</b>I run three My Lead Gen Secret accounts. Together they add roughly 100 to 200 new leads a day, and I email them from inside the platform.</p>
+      <ul>
+        <li>New leads go onto your list automatically, every day</li>
+        <li>A built-in mailer, so you don't need your own autoresponder to start</li>
+        <li>Low daily cost. See current pricing on their page.</li>
+      </ul>
+      <figure class="preview">
+        <iframe src="https://www.myleadgensecret.com/sizzle/?rid=MLGS_RID" title="My Lead Gen Secret overview video" loading="lazy"></iframe>
+        <figcaption>Their own overview, shown as-is</figcaption>
+      </figure>
+      <a class="cta" href="https://www.myleadgensecret.com/?rid=MLGS_RID">Yes, I'm interested &rarr;</a>
+      <p class="fine">Tip from me: these are fresh leads, so treat them like strangers. Send useful emails, not hype, and pick out the ones who respond.</p>
+    </article>
+
+    <article class="tool" id="daily-ads">
+      <p class="kind">Traffic &amp; ad rotation</p>
+      <h2>Daily-Ads</h2>
+      <p class="promise">Put your banner and text ads in front of active members every day, and keep all your offers on one link page.</p>
+      <p class="why"><b>Why I use it</b>It's my main traffic site. My link page lives there, and I'm a member at the Free, Bronze and Silver levels, so I can tell you honestly what each one gets you.</p>
+      <ul>
+        <li>Free to join: a banner ad, a link page, the rotators and Daily-Swipes</li>
+        <li>Earn credits by viewing ads. A few minutes a day keeps yours showing.</li>
+        <li>Join through me and you get a personal welcome and my follow-up tips</li>
+      </ul>
+      <a class="cta" href="https://daily-ads.com/r/12042/mhtools">Join Daily-Ads free &rarr;</a>
+    </article>
+
+    <article class="tool" id="tct">
+      <p class="kind">Rotator traffic</p>
+      <h2>Twice Confirmed Traffic</h2>
+      <p class="promise">A traffic rotator that sends visitors to the pages you choose.</p>
+      <p class="why"><b>Why I use it</b>My rotator traffic has brought leads onto my own email lists, and right now I point part of it at Daily-Ads. It's a steady, set-it-and-check-it source.</p>
+      <ul>
+        <li>Choose the pages your traffic goes to</li>
+        <li>Split traffic between offers and see what works</li>
+        <li>Pairs well with a simple capture page</li>
+      </ul>
+      <a class="cta" href="TCT_URL">Yes, I'm interested &rarr;</a>
+    </article>
+
+    <article class="tool" id="leadsleap">
+      <p class="kind">Pages, tracking &amp; ads</p>
+      <h2>LeadsLeap</h2>
+      <p class="promise">Build capture pages, track every link, and advertise in a long-running ad network, starting free.</p>
+      <p class="why"><b>Why I recommend it</b>It has been around since 2008, and its free account covers the pages and tracking a simple link page can't handle.</p>
+      <ul>
+        <li>Page builder for capture and promo pages</li>
+        <li>Link tracking, so you know which emails and ads get clicks</li>
+        <li>An ad network you can earn credits in</li>
+      </ul>
+      <a class="cta" href="https://leadsleap.com/?r=montehortonnet">Join LeadsLeap free &rarr;</a>
+    </article>
+
+    <article class="tool" id="gotbackup">
+      <p class="kind">Protect your work</p>
+      <h2>GotBackup</h2>
+      <p class="promise">Automatic cloud backup for your computer, phone and tablet, with an affiliate program built in.</p>
+      <p class="why"><b>Why I use it</b>Everything in my business lives on a computer. GotBackup is the backup I recommend, and it's one of the offers in the email system I promote.</p>
+      <ul>
+        <li>Backs up your devices automatically</li>
+        <li>Simple monthly plan</li>
+        <li>Optional affiliate program if you want to share it</li>
+      </ul>
+      <a class="cta" href="https://montehorton.gotbackuptour.com/build-my-downline?tr=mhtools">See GotBackup &rarr;</a>
+    </article>
+
+  </div>
+
+  <section class="closing">
+    <p>Not sure where to start? <a href="mailto:monte@montehorton.net">Email me</a> and tell me what you're promoting. I'll tell you which one I'd pick first.</p>
+    <p class="disclose">Disclosure: these are my referral links. If you join or buy through them, I may earn a commission, at no extra cost to you. I only list tools I use myself. No income results are promised or implied. What you get depends on your own work.</p>
+  </section>
+</main>
+
+<footer>© 2026 Monte Horton · <a href="/">montehorton.net</a></footer>
+</body>
+</html>

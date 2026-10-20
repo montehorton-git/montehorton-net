@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Tools I Use | Monte Horton</title>
-<meta name="description" content="The traffic, lead and list-building tools Monte Horton uses every day: My Lead Gen Secret, Daily-Ads, Twice Confirmed Traffic, LeadsLeap and GotBackup.">
+<meta name="description" content="The traffic, lead and list-building tools Monte Horton uses every day: Daily-Ads, My Lead Gen Secret, Twice Confirmed Traffic, LeadsLeap, SendShark and GotBackup.">
 <link rel="canonical" href="https://montehorton.net/tools/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://montehorton.net/tools/">
@@ -73,6 +73,21 @@
   .cta:active{transform:translateY(2px);box-shadow:0 2px 0 #B8892A}
   .fine{font-size:.92rem;color:var(--muted);margin:.7rem 0 0;text-align:center}
 
+  .signup{margin:3rem 0 0;background:var(--band);color:var(--band-ink);border-radius:14px;border-top:6px solid var(--gold);padding:2.4rem clamp(1.3rem,4vw,3rem) 2.4rem}
+  .signup .kind{color:var(--gold)}
+  .signup h2{font-family:var(--display);font-weight:700;font-size:clamp(1.9rem,5vw,2.6rem);line-height:1.08;margin:.45rem 0 0;letter-spacing:-.02em;color:var(--band-ink)}
+  .signup p.sub{margin:.8rem 0 0;color:var(--band-muted);font-size:1.06rem;max-width:40rem}
+  .signup form{display:grid;grid-template-columns:1fr 1.4fr auto;gap:.7rem;margin:1.5rem 0 0}
+  .signup input{width:100%;font:inherit;font-size:1.02rem;padding:.9rem 1rem;border-radius:10px;border:1px solid #3A4360;background:#0F1422;color:var(--band-ink)}
+  .signup input::placeholder{color:#7F879B}
+  .signup input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transparent}
+  .signup button{font:inherit;font-weight:700;font-size:1.05rem;padding:.9rem 1.5rem;border:0;border-radius:999px;background:var(--gold);color:#1A1406;cursor:pointer;box-shadow:0 4px 0 #B8892A;white-space:nowrap}
+  .signup button:disabled{opacity:.6;cursor:wait}
+  .signup .msg{margin:1rem 0 0;font-size:1.02rem;min-height:1.4em}
+  .signup .msg.ok{color:var(--gold);font-weight:600}
+  .signup .msg.err{color:#F0A08C}
+  .signup .fine{text-align:left;color:var(--band-muted);margin:.6rem 0 0}
+  @media (max-width:640px){.signup form{grid-template-columns:1fr}.signup button{width:100%}}
   .closing{margin:3rem 0 0;padding:1.8rem 0 0;border-top:1px solid var(--rule)}
   .closing p{margin:0 0 1rem;color:var(--muted);font-size:1.05rem}
   .closing a{color:var(--brass)}
@@ -96,6 +111,7 @@
       <li><a href="#leadsleap">LeadsLeap</a></li>
       <li><a href="#sendshark">SendShark</a></li>
       <li><a href="#gotbackup">GotBackup</a></li>
+      <li><a href="#notes">Get my notes</a></li>
     </ul>
   </div>
 </div>
@@ -186,6 +202,19 @@
 
   </div>
 
+  <section class="signup" id="notes" aria-labelledby="notes-h">
+    <p class="kind">Free email notes</p>
+    <h2 id="notes-h">Get my notes on these tools</h2>
+    <p class="sub">One short email every few days: how I actually use each tool, and one small thing you can do that day. Start with the one that fits where you are.</p>
+    <form id="notes-form" novalidate>
+      <input id="nf-name" name="first_name" type="text" aria-label="First name" autocomplete="given-name" placeholder="First name">
+      <input id="nf-email" name="email" type="email" aria-label="Email address" autocomplete="email" placeholder="Email address" required>
+      <button type="submit">Send me the notes</button>
+    </form>
+    <p class="msg" id="nf-msg" role="status" aria-live="polite"></p>
+    <p class="fine">No spam. Unsubscribe from any email with one click.</p>
+  </section>
+
   <section class="closing">
     <p>Not sure where to start? <a href="mailto:monte@montehorton.net">Email me</a> and tell me what you're promoting. I'll tell you which one I'd pick first.</p>
     <p class="disclose">Disclosure: these are my referral links. If you join or buy through them, I may earn a commission, at no extra cost to you. I only list tools I use myself. No income results are promised or implied. What you get depends on your own work.</p>
@@ -193,5 +222,24 @@
 </main>
 
 <footer>© 2026 Monte Horton · <a href="/">montehorton.net</a></footer>
+<script>
+(function(){
+  var f=document.getElementById('notes-form'), m=document.getElementById('nf-msg');
+  if(!f) return;
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email=f.email.value.trim(), name=f.first_name.value.trim(), b=f.querySelector('button');
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ m.className='msg err'; m.textContent='Please enter a valid email address.'; f.email.focus(); return; }
+    b.disabled=true; m.className='msg'; m.textContent='Signing you up...';
+    fetch('https://heritage250-subscribe.montehorton.workers.dev/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,first_name:name,source:'mhtools'})})
+      .then(function(r){ return r.json().then(function(j){ return {ok:r.ok&&j.success,j:j}; }); })
+      .then(function(res){
+        if(res.ok){ f.hidden=true; m.className='msg ok'; m.textContent="You're in"+(name?', '+name:'')+". Check your inbox for my first email from Monte Horton."; }
+        else { throw new Error(); }
+      })
+      .catch(function(){ b.disabled=false; m.className='msg err'; m.textContent='Something went wrong. Please try again, or email me at monte@montehorton.net.'; });
+  });
+})();
+</script>
 </body>
 </html>

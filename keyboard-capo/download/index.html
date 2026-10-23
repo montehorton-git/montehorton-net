@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Thank you — The Horton Keyboard Capo™</title>
+<title>Your download — The Horton Keyboard Capo™</title>
 <meta name="description" content="The Horton Keyboard Capo™: lock your right hand on one four-note shape, move your left hand through the progression, and get the open, ringing worship sound. Free sample for the key of G.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="author" content="Monte Horton">
@@ -81,19 +81,44 @@
 <div class="wrap">
   <p class="crumb"><a href="/">Monte Horton</a> / <a href="/keyboard-capo/">The Horton Keyboard Capo™</a></p>
   <header style="padding-top:2rem">
-    <h1>Thank you.</h1>
-    <p class="intro">Your copy of the full visual reference is ready.</p>
+    <h1 id="title">One moment…</h1>
+    <p class="intro" id="intro">Checking your download link.</p>
   </header>
   <div class="body">
-    <div class="cta">
+    <div class="cta" id="ready" hidden>
       <h3>The Horton Keyboard Capo™ — all 12 keys</h3>
       <p>Thirteen pages: the introduction plus one page per major key. Save it to your device and print as many copies as you need for your own playing.</p>
-      <a class="btn" href="Horton-Keyboard-Capo-Visual-Reference.pdf" download>Download the PDF</a>
+      <a class="btn" id="dl" href="#">Download the PDF</a>
     </div>
-    <p>Bookmark this page in case you need the download again. Questions, or want help applying it to a specific song? Email <a href="mailto:monte@montehorton.net" style="color:var(--brass)">monte@montehorton.net</a>.</p>
+    <p id="help">Questions, or want help applying it to a specific song? Email <a href="mailto:monte@montehorton.net" style="color:var(--brass)">monte@montehorton.net</a>.</p>
     <p class="notice">The Horton Keyboard Capo™ is an original piano method created by Monte Horton. © 2026 Monte Horton. All rights reserved.</p>
   </div>
 </div>
 <footer><a href="/" style="color:inherit">montehorton.net</a> · © 2026 Monte Horton</footer>
+<script>
+(async () => {
+  const token = new URLSearchParams(location.search).get('token');
+  const fail = (msg) => {
+    document.getElementById('title').textContent = 'This link isn\'t working.';
+    document.getElementById('intro').textContent = msg;
+  };
+  if (!token) return fail('Please use the link from your delivery email.');
+  try {
+    const res = await fetch('https://heritage250-delivery.montehorton.workers.dev/validate', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token })
+    });
+    const data = await res.json();
+    if (!res.ok || !data.files || !data.files.length) {
+      return fail((data && data.error ? data.error + '. ' : '') + 'Email monte@montehorton.net and I\'ll send a fresh link.');
+    }
+    document.getElementById('title').textContent = 'Your copy is ready.';
+    document.getElementById('intro').textContent = 'Download it now and save it somewhere safe: this link works for 48 hours.';
+    document.getElementById('dl').href = data.files[0].url;
+    document.getElementById('ready').hidden = false;
+  } catch (e) {
+    fail('Something went wrong checking your link. Email monte@montehorton.net and I\'ll send it directly.');
+  }
+})();
+</script>
 </body>
 </html>

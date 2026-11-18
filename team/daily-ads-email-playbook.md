@@ -23,7 +23,7 @@ From Monte Horton, for the people on my Daily-Ads team.
 - Silver adds unlimited pages, top rotator priority and featured placement.
 - Daily-Swipes is a public board. Members and visitors without an account browse it on purpose. Ads drift down as new ones go up; you can refresh or boost yours.
 - Daily-Builder shows your team as it grows, level by level, plus the leaderboard.
-- The Affiliate Toolbox shows clicks and sign-ups by source tag.
+- The Affiliate Toolbox builds tagged links and shows clicks by source tag. The referral list on your dashboard shows which tag each sign-up came from.
 - New members must click the confirmation email before their account is active.
 - The team Quick Start page (video overview, ready-made pages, swipes, banners): https://lllpg.com/dreamteamtrainingpage/
 

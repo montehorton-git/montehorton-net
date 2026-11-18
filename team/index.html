@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Team Kit: Follow Up Like a Pro | Monte Horton</title>
+<meta name="description" content="Monte Horton's follow-up kit for his Daily-Ads team: welcome email, swipes, a hooks playbook and an AI prompt for a daily email.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://montehorton.net/team/">
+<meta name="author" content="Monte Horton">
+<base target="_top">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --paper:#FBF9F5; --ink:#1A2238; --muted:#5C6478;
+    --brass:#8A6A2F; --gold:#E2B44C; --rule:#DED8CC; --rule-soft:#E9E4DA;
+    --card:#FFFFFF; --band:#141A2B; --band-ink:#F3EFE6; --band-muted:#A9B0C2;
+    --display:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#131826; --ink:#EDEAE3; --muted:#98A0B4;
+      --brass:#C79B4A; --rule:#2C3446; --rule-soft:#232B3C; --card:#1A2033; --band:#0C1019;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#131826; --ink:#EDEAE3; --muted:#98A0B4;
+    --brass:#C79B4A; --rule:#2C3446; --rule-soft:#232B3C; --card:#1A2033; --band:#0C1019;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
+  .wrap{width:100%;max-width:62rem;margin:0 auto;padding:0 1.25rem}
+
+  .band{background:var(--band);color:var(--band-ink);padding:1.1rem 0 5.5rem;border-bottom:3px solid var(--gold)}
+  .crumb{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--band-muted);text-decoration:none}
+  .crumb:hover{color:var(--gold)}
+  .band h1{font-family:var(--display);font-optical-sizing:auto;font-weight:700;font-size:clamp(2.8rem,9vw,4.8rem);line-height:1;letter-spacing:-.025em;margin:3.2rem 0 0;color:var(--gold)}
+  .band .lede{font-family:var(--display);font-style:italic;font-size:clamp(1.25rem,3.4vw,1.7rem);line-height:1.4;margin:1.5rem 0 0;max-width:44rem;text-wrap:balance}
+  .band .note{margin:1.2rem 0 0;color:var(--band-muted);font-size:1.02rem;max-width:44rem}
+
+  .jump{display:flex;flex-wrap:wrap;gap:.5rem;margin:2rem 0 0;padding:0;list-style:none}
+  .jump a{display:inline-block;font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;text-decoration:none;color:var(--band-ink);border:1px solid #3A4360;border-radius:999px;padding:.35rem .8rem}
+  .jump a:hover{border-color:var(--gold);color:var(--gold)}
+
+  .tools{margin:-3.2rem auto 0;display:grid;gap:2.2rem}
+  .tool{background:var(--card);border:1px solid var(--rule);border-top:6px solid var(--gold);border-radius:14px;padding:2.4rem clamp(1.3rem,4vw,3rem) 2.6rem;box-shadow:0 1px 2px rgba(20,26,43,.05),0 8px 24px -12px rgba(20,26,43,.18)}
+  .kind{font-family:var(--mono);font-size:.78rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--brass);margin:0}
+  .tool h2{font-family:var(--display);font-weight:700;font-size:clamp(2.1rem,6vw,3.1rem);line-height:1.04;margin:.45rem 0 0;letter-spacing:-.02em}
+  .promise{font-size:clamp(1.15rem,2.6vw,1.4rem);line-height:1.45;margin:.9rem 0 0;font-weight:600}
+  .why{margin:1.5rem 0 0;padding:1.1rem 1.3rem;border-left:4px solid var(--gold);background:color-mix(in srgb,var(--gold) 9%,transparent);border-radius:0 8px 8px 0;font-size:1.04rem}
+  .why b{font-family:var(--mono);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);display:block;margin-bottom:.2rem;font-weight:500}
+  .tool ul{margin:1.4rem 0 0;padding:0 0 0 1.25rem;font-size:1.06rem}
+  .tool li{margin:.45rem 0;font-weight:500;color:var(--ink)}
+  .tool li::marker{color:var(--brass)}
+
+  .preview{margin:1.3rem 0 0;border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:#fff}
+  .preview iframe{display:block;width:100%;height:clamp(380px,60vw,560px);border:0}
+  .preview figcaption{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;color:var(--muted);padding:.45rem .8rem;border-top:1px solid var(--rule-soft);background:var(--card)}
+
+  .cta{display:block;text-align:center;margin:1.8rem auto 0;max-width:30rem;padding:1.15rem 1.4rem;background:var(--gold);color:#1A1406;font-weight:700;font-size:clamp(1.15rem,2.8vw,1.35rem);text-decoration:none;border-radius:999px;box-shadow:0 4px 0 #B8892A,0 10px 24px -10px rgba(184,137,42,.7);transition:transform .12s,box-shadow .12s}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 6px 0 #B8892A,0 14px 28px -10px rgba(184,137,42,.75)}
+  .cta:active{transform:translateY(2px);box-shadow:0 2px 0 #B8892A}
+  .fine{font-size:.92rem;color:var(--muted);margin:.7rem 0 0;text-align:center}
+
+  .signup{margin:3rem 0 0;background:var(--band);color:var(--band-ink);border-radius:14px;border-top:6px solid var(--gold);padding:2.4rem clamp(1.3rem,4vw,3rem) 2.4rem}
+  .signup .kind{color:var(--gold)}
+  .signup h2{font-family:var(--display);font-weight:700;font-size:clamp(1.9rem,5vw,2.6rem);line-height:1.08;margin:.45rem 0 0;letter-spacing:-.02em;color:var(--band-ink)}
+  .signup p.sub{margin:.8rem 0 0;color:var(--band-muted);font-size:1.06rem;max-width:40rem}
+  .signup form{display:grid;grid-template-columns:1fr 1.4fr auto;gap:.7rem;margin:1.5rem 0 0}
+  .signup input{width:100%;font:inherit;font-size:1.02rem;padding:.9rem 1rem;border-radius:10px;border:1px solid #3A4360;background:#0F1422;color:var(--band-ink)}
+  .signup input::placeholder{color:#7F879B}
+  .signup input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transparent}
+  .signup button{font:inherit;font-weight:700;font-size:1.05rem;padding:.9rem 1.5rem;border:0;border-radius:999px;background:var(--gold);color:#1A1406;cursor:pointer;box-shadow:0 4px 0 #B8892A;white-space:nowrap}
+  .signup button:disabled{opacity:.6;cursor:wait}
+  .signup .msg{margin:1rem 0 0;font-size:1.02rem;min-height:1.4em}
+  .signup .msg.ok{color:var(--gold);font-weight:600}
+  .signup .msg.err{color:#F0A08C}
+  .signup .fine{text-align:left;color:var(--band-muted);margin:.6rem 0 0}
+  @media (max-width:640px){.signup form{grid-template-columns:1fr}.signup button{width:100%}}
+  .closing{margin:3rem 0 0;padding:1.8rem 0 0;border-top:1px solid var(--rule)}
+  .closing p{margin:0 0 1rem;color:var(--muted);font-size:1.05rem}
+  .closing a{color:var(--brass)}
+  .disclose{font-size:.84rem}
+  footer{margin:3.5rem auto 0;padding:1.4rem 1.25rem 3rem;max-width:62rem;color:var(--muted);font-family:var(--mono);font-size:.7rem;letter-spacing:.06em}
+  footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
+</style>
+
+<style>
+  .box{position:relative;margin:1.3rem 0 0;border:1px solid var(--rule);border-radius:10px;background:var(--paper);padding:1.2rem 1.3rem 1.1rem}
+  .box .subj{font-family:var(--mono);font-size:.8rem;color:var(--brass);margin:0 0 .6rem;letter-spacing:.04em}
+  .tools>.tool{min-width:0}
+  .box pre{white-space:pre-wrap;overflow-wrap:anywhere;font-family:var(--sans);font-size:1rem;line-height:1.55;margin:0}
+  .copy{position:absolute;top:.7rem;right:.7rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:999px;padding:.3rem .75rem;cursor:pointer}
+  .copy:hover{border-color:var(--gold)}
+  .steps{counter-reset:s;list-style:none;padding:0;margin:1.4rem 0 0}
+  .steps li{counter-increment:s;position:relative;padding:0 0 0 2.6rem;margin:.9rem 0;font-weight:500}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:-.1rem;width:1.8rem;height:1.8rem;border-radius:50%;background:var(--gold);color:#1A1406;font-family:var(--mono);font-size:.85rem;display:flex;align-items:center;justify-content:center}
+  .tool p{margin:1rem 0 0}
+  details.sw{margin:1rem 0 0;border:1px solid var(--rule);border-radius:10px;background:var(--paper)}
+  details.sw summary{cursor:pointer;padding:.9rem 1.2rem;font-weight:600}
+  details.sw .box{margin:0;border:0;border-top:1px solid var(--rule-soft);border-radius:0 0 10px 10px}
+  .dl{display:inline-block;margin:1.2rem .6rem 0 0;padding:.75rem 1.2rem;border:2px solid var(--gold);border-radius:999px;text-decoration:none;font-weight:600}
+  .dl:hover{background:color-mix(in srgb,var(--gold) 15%,transparent)}
+</style>
+
+</head>
+<body>
+<div class="band">
+  <div class="wrap">
+    <a class="crumb" href="/">&larr; montehorton.net</a>
+    <h1>Team kit</h1>
+    <p class="lede">Most people don't join the first day they hear about something. The ones who keep showing up in the inbox are the ones who get the sign-up.</p>
+    <p class="note">This page is for the people on my Daily-Ads team. Everything here is free to copy and change. Welcome everyone who joins through you, follow up every day, and keep going.</p>
+    <ul class="jump">
+      <li><a href="#plan">The plan</a></li>
+      <li><a href="#welcome">Welcome email</a></li>
+      <li><a href="#daily">Daily routine</a></li>
+      <li><a href="#swipes">Swipes</a></li>
+      <li><a href="#prompt">Playbook &amp; AI prompt</a></li>
+      <li><a href="#help">Help</a></li>
+    </ul>
+  </div>
+</div>
+<main class="wrap">
+  <div class="tools">
+
+    <article class="tool" id="plan">
+      <p class="kind">How it works</p>
+      <h2>The follow-up plan</h2>
+      <p class="promise">Getting someone to sign up is the start. Following up is where the team gets built.</p>
+      <ol class="steps">
+        <li>Send the welcome email to every person who joins through you, the same day. Not just the ones who upgrade.</li>
+        <li>Email them every day for the first 30 days, or at least every other day. One idea and one link each time.</li>
+        <li>After 30 days, keep going. Daily is best; weekly at the very least. People join when they're ready, sometimes months later.</li>
+        <li>Put it in an autoresponder so it runs without you. The tools I use are on <a href="/tools/">my tools page</a>.</li>
+        <li>Stay honest. No income claims, no screenshots of money, no promises. Talk about what Daily-Ads does and how you use it.</li>
+      </ol>
+    </article>
+
+    <article class="tool" id="welcome">
+      <p class="kind">Day 0</p>
+      <h2>The welcome email</h2>
+      <p class="promise">Send this to every new sign-up. Swap in your name, and keep the confirmation-email line: their account isn't active until they click it.</p>
+      <div class="box"><p class="subj">Subject: welcome to Daily-Ads (one quick thing first)</p><button class="copy" data-copy="welcome-text">Copy</button><pre id="welcome-text">Hi {name},
+
+[YOUR NAME] here. You joined Daily-Ads through my link, so welcome. I&#x27;m glad you&#x27;re here.
+
+First thing: find the confirmation email from Daily-Ads (check spam and promotions too) and click the link inside. Your account isn&#x27;t active until you do.
+
+Then bookmark our team&#x27;s Quick Start page. It has a video overview, ready-made pages you can promote, email swipes and banners:
+https://lllpg.com/dreamteamtrainingpage/
+
+Three things for your first 15 minutes:
+
+1. Add your first banner or text ad.
+2. Point it at a page with one offer. The page builder makes one in about ten minutes.
+3. View a few ads. That earns the credits that keep your own ad showing.
+
+If you get stuck, just reply to this email. I read every reply.
+
+[YOUR NAME]
+
+P.S. Not sure what to promote yet? Reply and tell me. We&#x27;ll figure it out together.</pre></div>
+    </article>
+
+    <article class="tool" id="daily">
+      <p class="kind">Five minutes</p>
+      <h2>Your daily routine</h2>
+      <ol class="steps">
+        <li>Log in to Daily-Ads and view ads for about five minutes. That keeps your own ads in rotation.</li>
+        <li>Check one number: which of your ads got a click yesterday? Keep that one running.</li>
+        <li>Refresh your Daily-Swipes ad if it has drifted down the board.</li>
+        <li>Send one email to your list. Pick a swipe below, or a hook from the playbook.</li>
+        <li>Answer any replies. That's where the relationships start.</li>
+      </ol>
+    </article>
+
+    <article class="tool" id="swipes">
+      <p class="kind">Copy, change, send</p>
+      <h2>Swipes</h2>
+      <p class="promise">Ready-to-send emails about Daily-Ads. Put your own referral link where it says [YOUR LINK] and sign with your name.</p>
+      <p>Tip: add a source tag to your link in the Affiliate Toolbox (for example "swipe3") so you can see which email brings sign-ups.</p>
+      <details class="sw"><summary>1. the free ad platform I use every day</summary><div class="box"><p class="subj">Subject: the free ad platform I use every day</p><button class="copy" data-copy="sw1">Copy</button><pre id="sw1">Hi {name},
+
+Quick one about the tool I use every day to get eyes on my offers.
+
+It&#x27;s called Daily-Ads. You view other members&#x27; ads to earn credits, and your credits show your own ads to other members. It&#x27;s free to start, with no credit card required.
+
+The free plan gives you a banner ad, link rotators, a one-page webpage builder and the member chat. That&#x27;s enough to get your first ad running today.
+
+Join Daily-Ads free: [YOUR LINK]
+
+After you sign up, click the link in the Daily-Ads confirmation email (check spam too). Then reply and tell me what you want to promote.
+
+[YOUR NAME]</pre></div></details><details class="sw"><summary>2. no website? you can still run an ad</summary><div class="box"><p class="subj">Subject: no website? you can still run an ad</p><button class="copy" data-copy="sw2">Copy</button><pre id="sw2">Hi {name},
+
+A lot of people never start advertising because they think they need a website first. You don&#x27;t.
+
+On Daily-Ads, the free plan includes a one-page webpage builder, so you can make a simple page with one offer and one button in about ten minutes. Point your ad at it and you&#x27;re running.
+
+And if you join through me, you get our team&#x27;s Quick Start page with ready-made pages, banners and swipes you can use right away.
+
+Get your free account: [YOUR LINK]
+
+One step people miss: click the confirmation email Daily-Ads sends you. Your account isn&#x27;t active until you do.
+
+[YOUR NAME]</pre></div></details><details class="sw"><summary>3. the ad board people browse on purpose</summary><div class="box"><p class="subj">Subject: the ad board people browse on purpose</p><button class="copy" data-copy="sw3">Copy</button><pre id="sw3">Hi {name},
+
+Most ad exchanges show your ad to people who are clicking past it to earn credits.
+
+Daily-Swipes is different. It&#x27;s a public board of ads on Daily-Ads, and both members and visitors without an account browse it looking for something to check out. Every plan gets at least one slot, the free plan too.
+
+You post a headline, a couple of lines and your link. When it drifts down the board, you can refresh it or boost it back toward the top.
+
+Get your free slot: [YOUR LINK]
+
+After you sign up, click the link in the confirmation email. Your account isn&#x27;t active until you do.
+
+[YOUR NAME]</pre></div></details><details class="sw"><summary>4. why most ads get clicks and no signups</summary><div class="box"><p class="subj">Subject: why most ads get clicks and no signups</p><button class="copy" data-copy="sw4">Copy</button><pre id="sw4">Hi {name},
+
+Here&#x27;s the most common mistake I see: an ad that points at a homepage, or a page full of options.
+
+Someone clicks, has to work out what to do next, and leaves. The click wasn&#x27;t wasted. The destination was.
+
+What works better:
+
+1. One ad, one page, with one offer and one next step.
+2. Match the words. If your ad says &quot;free traffic plan,&quot; the page says &quot;free traffic plan&quot; at the top.
+3. One link on that page. No menu.
+
+Daily-Ads has a page builder for exactly this, and it&#x27;s in the free plan.
+
+Build your first one-offer page: [YOUR LINK]
+
+[YOUR NAME]</pre></div></details><details class="sw"><summary>5. I&#x27;ll look at your first ad myself</summary><div class="box"><p class="subj">Subject: I&#x27;ll look at your first ad myself</p><button class="copy" data-copy="sw5">Copy</button><pre id="sw5">Hi {name},
+
+The headline is the part of an ad most people rush, and it&#x27;s the part that decides whether anyone clicks.
+
+Here&#x27;s my offer. Join Daily-Ads through my link, then reply to my welcome email with your ad headline and the page it points to. I&#x27;ll send you back one or two ideas to sharpen it.
+
+Join Daily-Ads free: [YOUR LINK]
+
+Three things that make a headline work:
+
+1. Say what they get, not what it is.
+2. Keep it short enough to read at a glance.
+3. Make the words match the page your ad points to.
+
+After you sign up, click the confirmation link Daily-Ads emails you. Then send me that headline.
+
+[YOUR NAME]</pre></div></details><details class="sw"><summary>6. Free, Bronze or Silver: how the levels compare</summary><div class="box"><p class="subj">Subject: Free, Bronze or Silver: how the levels compare</p><button class="copy" data-copy="sw6">Copy</button><pre id="sw6">Hi {name},
+
+People ask which Daily-Ads level to start on. Here&#x27;s how they compare.
+
+Free is the right place to start: a banner ad, the rotators, a one-page builder, Daily-Swipes and the member chat. That&#x27;s enough to find out whether you&#x27;ll log in every day.
+
+Bronze is $11 a month, for when you&#x27;re showing up most days. It adds 3 banner ads instead of 1, your own Login Ad (the first thing every member sees when they sign in), and a broadcast to members every 12 hours.
+
+Silver goes further, with top rotator priority, unlimited pages and featured placement.
+
+Start free: [YOUR LINK]
+
+Build the habit first, then move up only if it&#x27;s worth it to you.
+
+[YOUR NAME]</pre></div></details>
+    </article>
+
+    <article class="tool" id="prompt">
+      <p class="kind">One email a day, in minutes</p>
+      <h2>The playbook and the prompt</h2>
+      <p class="promise">The playbook has 42 hooks, the Daily-Ads facts you can rely on, and the email shapes that work. The prompt turns any hook into a short, honest email.</p>
+      <ol class="steps">
+        <li>Download the playbook below.</li>
+        <li>Open ChatGPT or Claude and upload the playbook.</li>
+        <li>Paste the prompt, fill in the brackets, and pick a hook.</li>
+        <li>Read the draft, put a true detail from your own week in it, and send.</li>
+      </ol>
+      <a class="dl" href="daily-ads-email-playbook.md" download>Download the playbook (.md)</a>
+      <a class="dl" href="daily-email-prompt.txt" download>Download the prompt (.txt)</a>
+      <div class="box"><button class="copy" data-copy="prompt-text">Copy</button><pre id="prompt-text">You are helping me write one short follow-up email to the people who joined Daily-Ads through my link. I&#x27;ve uploaded my Daily-Ads Email Playbook. Use only the facts in it.
+
+Write the email on this hook: [PASTE A HOOK FROM THE PLAYBOOK]
+
+My details:
+- My name: [YOUR FIRST NAME]
+- My Daily-Ads referral link: [YOUR LINK, WITH A SOURCE TAG]
+- A true detail from my week or my life I&#x27;d like to open with (optional): [ONE OR TWO SENTENCES]
+
+Rules:
+1. 120 to 200 words. Short paragraphs, one to three sentences each. Plain text, no headings, no bullet symbols except a numbered list of up to three steps.
+2. Friendly and personal, like a note from someone who uses Daily-Ads every day. Open with &quot;Hey there {name},&quot; or &quot;Hi {name},&quot;.
+3. One idea and one call to action. Put my link on its own line after a short phrase, like: &quot;Log in and try it: [link]&quot;.
+4. Only use facts from the playbook&#x27;s &quot;Facts you can use&quot; list. If I gave a personal detail, use it as I wrote it and don&#x27;t add to it. Never invent a story, a number, a member, or a result.
+5. No income claims of any kind: no dollar amounts earned, no &quot;make money&quot;, no promises about results. Prices of plans are fine.
+6. If the email is about joining or getting started, include one line reminding them to click the confirmation email Daily-Ads sends.
+7. End with a short sign-off and my name. Add a one-line P.S. that invites a reply.
+8. Give me three subject line options under 50 characters, lowercase and conversational.
+
+Then check your draft against rules 3, 4 and 5 and fix anything that breaks them before you show it to me.</pre></div>
+    </article>
+
+    <article class="tool" id="help">
+      <p class="kind">Questions</p>
+      <h2>Stuck? Ask me.</h2>
+      <p class="promise">Reply to any of my team emails and I'll answer personally. Send me your headline or your welcome email and I'll give you one idea to sharpen it.</p>
+      <p>The team Quick Start page has the video overview, ready-made pages and banners:</p>
+      <a class="cta" href="https://lllpg.com/dreamteamtrainingpage/">Open the Quick Start page &rarr;</a>
+      <p class="fine">Ever Forward, Monte</p>
+    </article>
+
+  </div>
+</main>
+<footer class="wrap" style="padding:3rem 1.25rem 4rem;color:var(--muted);font-size:.9rem">&copy; 2026 Monte Horton</footer>
+<script>
+document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){
+  var t=document.getElementById(b.dataset.copy).innerText;
+  var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fallback(t);done()})}else{fallback(t);done()}
+})});
+function fallback(t){var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(a)}
+</script>
+</body>
+</html>
